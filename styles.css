@@ -1791,7 +1791,7 @@ body {
   font-family: inherit;
 }
 
-/* Media Gallery & Placeholders */
+/* Media Gallery & Actual Media Embeds */
 .iot-media-intro {
   font-size: 0.95rem;
   color: var(--text-secondary);
@@ -1800,50 +1800,45 @@ body {
 
 .iot-media-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
-.iot-media-card {
+.iot-photo-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.iot-media-item {
   display: flex;
   flex-direction: column;
 }
 
-.iot-media-slot {
+.iot-media-span-full {
+  grid-column: 1 / -1;
+}
+
+.iot-media-frame {
   background: var(--bg-color);
-  border: 2.5px dashed var(--border-dark);
+  border: 2px solid var(--border-dark);
   box-shadow: 4px 4px 0px var(--border-dark);
   border-radius: var(--radius-sm);
   padding: 1.25rem;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  height: 100%;
-}
-
-.iot-media-slot:hover {
-  border-style: solid;
-  border-color: var(--accent-pink);
-  box-shadow: 6px 6px 0px var(--accent-pink);
-  transform: translateY(-2px);
-}
-
-.iot-media-slot.video-slot:hover {
-  border-color: var(--accent-green-dark);
-  box-shadow: 6px 6px 0px var(--accent-green-dark);
-}
-
-[data-theme="dark"] .iot-media-slot.video-slot:hover {
-  border-color: var(--accent-green);
-  box-shadow: 6px 6px 0px var(--accent-green);
-}
-
-.media-placeholder-frame {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  height: 100%;
+  transition: all var(--transition-fast);
 }
 
-.media-icon-badge {
+.iot-media-frame:hover {
+  box-shadow: 6px 6px 0px var(--accent-pink);
+  border-color: var(--accent-pink);
+  transform: translateY(-2px);
+}
+
+.iot-media-badge-tag {
   font-family: var(--font-pixel);
   font-size: 0.7rem;
   color: var(--accent-pink);
@@ -1852,88 +1847,98 @@ body {
   padding: 4px 8px;
   border-radius: var(--radius-sm);
   align-self: flex-start;
+  letter-spacing: 0.5px;
 }
 
-.media-icon-badge.video-badge {
+.iot-media-badge-tag.video-tag {
   color: var(--accent-green-dark);
   background: var(--accent-green-light);
   border-color: var(--accent-green);
 }
 
-[data-theme="dark"] .media-icon-badge.video-badge {
+[data-theme="dark"] .iot-media-badge-tag.video-tag {
   color: var(--accent-green);
 }
 
-.media-visual-box {
-  background: var(--card-bg);
-  border: 2px solid var(--border-dark);
-  border-radius: var(--radius-sm);
-  height: 160px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-align: center;
-  padding: 1rem;
+/* Image Wrapper with Zoom / Lightbox */
+.iot-img-wrapper {
   position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-dark);
   overflow: hidden;
-  background-image: 
-    linear-gradient(to right, var(--bg-grid-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--bg-grid-color) 1px, transparent 1px);
-  background-size: 16px 16px;
+  cursor: pointer;
+  background: #0b0f19;
 }
 
-.media-camera-symbol {
-  font-size: 2.2rem;
+.iot-photo-gallery-grid .iot-img-wrapper {
+  height: 175px;
 }
 
-.media-play-button {
-  width: 46px;
-  height: 46px;
-  background: var(--accent-green);
-  color: #0b1019;
-  border: 2px solid var(--border-dark);
-  box-shadow: 3px 3px 0px var(--border-dark);
-  border-radius: 50%;
+.iot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.iot-img-wrapper:hover .iot-img {
+  transform: scale(1.06);
+}
+
+.iot-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 14, 23, 0.65);
+  backdrop-filter: blur(2px);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  padding-left: 3px;
-  transition: transform 0.2s ease;
-}
-
-.iot-media-slot:hover .media-play-button {
-  transform: scale(1.15);
-}
-
-.media-tag-text {
+  opacity: 0;
+  transition: opacity 0.2s ease;
   font-family: var(--font-pixel);
-  font-size: 0.72rem;
-  color: var(--text-primary);
-  letter-spacing: 0.5px;
+  font-size: 0.75rem;
+  color: #ffffff;
+  padding: 8px;
 }
 
-.media-dim-badge {
-  font-family: var(--font-pixel);
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  background: var(--bg-color);
-  padding: 2px 6px;
-  border-radius: 2px;
-  border: 1px solid var(--border-subtle);
+.iot-img-wrapper:hover .iot-img-overlay {
+  opacity: 1;
 }
 
-.media-caption {
+/* Video Player Container */
+.iot-video-player-container {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--border-dark);
+  overflow: hidden;
+  background: #000000;
+  box-shadow: 2px 2px 0px var(--border-dark);
+}
+
+.iot-video-player {
+  width: 100%;
+  max-height: 480px;
+  display: block;
+  outline: none;
+  background: #000000;
+}
+
+.iot-media-caption {
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.5;
-  border-left: 2.5px solid var(--border-dark);
-  padding-left: 8px;
+  border-left: 2.5px solid var(--accent-pink);
+  padding-left: 10px;
+  margin-top: 4px;
 }
 
-.media-caption strong {
+.iot-media-caption strong {
   color: var(--text-primary);
 }
 
@@ -1944,9 +1949,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(10, 14, 23, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(10, 14, 23, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 2000;
   display: flex;
   align-items: center;
@@ -1967,8 +1972,11 @@ body {
   border: 2.5px solid var(--border-dark);
   box-shadow: 8px 8px 0px var(--accent-pink);
   border-radius: var(--radius-sm);
-  width: 600px;
+  width: 820px;
   max-width: 95vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   transform: scale(0.95);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1997,8 +2005,8 @@ body {
 .media-modal-close {
   background: var(--card-bg);
   border: 1.5px solid var(--border-dark);
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -2016,13 +2024,28 @@ body {
 }
 
 .media-modal-body {
-  padding: 1.75rem 1.5rem;
+  padding: 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  overflow-y: auto;
+}
+
+.modal-full-img {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-dark);
+  background: #0b0f19;
+}
+
+.modal-caption-text {
+  font-size: 0.925rem;
   color: var(--text-secondary);
-  font-size: 0.95rem;
   line-height: 1.6;
+  border-left: 3px solid var(--accent-green);
+  padding-left: 12px;
 }
 
 /* Responsive Breakpoints */
@@ -2033,6 +2056,10 @@ body {
 
   .iot-concepts-grid {
     grid-template-columns: 1fr;
+  }
+
+  .iot-photo-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -2049,7 +2076,7 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .iot-media-grid {
+  .iot-media-grid, .iot-photo-gallery-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2057,4 +2084,5 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 

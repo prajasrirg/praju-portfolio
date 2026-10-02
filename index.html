@@ -525,42 +525,52 @@ void loop() {
           <!-- TAB 4: MEDIA GALLERY (PHOTOS & VIDEOS) -->
           <div class="iot-tab-pane" data-pane="media">
             <div class="iot-pane-content">
-              <h4 class="iot-subheading">Hardware Demonstrations, Circuit Photos & Video Logs</h4>
+              <h4 class="iot-subheading">Hardware Captures & Real-Time Video Demonstration</h4>
               <p class="iot-media-intro">
-                Visual documentation and interactive recordings verifying physical hardware actuation and network socket responses.
+                High-resolution photographic evidence and video recordings verifying local socket-level actuation and network responses.
               </p>
 
               <div class="iot-media-grid">
-                <!-- Photo Slot 1 -->
-                <div class="iot-media-card">
-                  <div class="iot-media-slot photo-slot" data-type="photo">
-                    <div class="media-placeholder-frame">
-                      <div class="media-icon-badge">📷 PHOTO PLACEHOLDER</div>
-                      <div class="media-visual-box">
-                        <span class="media-camera-symbol">📸</span>
-                        <div class="media-tag-text">CIRCUIT SETUP & BREADBOARD INTERFACING</div>
-                        <div class="media-dim-badge">1920 × 1080 (HD) · JPG / PNG</div>
-                      </div>
-                      <div class="media-caption">
-                        <strong>Figure 1.1:</strong> ESP32 SoC wired to digital status indicator and breadboard circuit with dynamic subnet IP allocation.
-                      </div>
+                <!-- Photo 1 -->
+                <div class="iot-media-item">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag">📷 HARDWARE CAPTURE</div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-1/task1_circuit_setup_1.jpeg" data-caption="ESP32 System-on-Chip breadboard setup with status indicators and local subnet Wi-Fi interface.">
+                      <img src="assets/iot/task-1/task1_circuit_setup_1.jpeg" alt="ESP32 Breadboard Circuit Setup" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Figure 1.1:</strong> ESP32 SoC wired to digital status indicator and breadboard circuit with dynamic subnet IP allocation.
                     </div>
                   </div>
                 </div>
 
-                <!-- Video Slot 1 -->
-                <div class="iot-media-card">
-                  <div class="iot-media-slot video-slot" data-type="video">
-                    <div class="media-placeholder-frame video-frame">
-                      <div class="media-icon-badge video-badge">🎥 VIDEO PLACEHOLDER</div>
-                      <div class="media-visual-box video-box">
-                        <div class="media-play-button">▶</div>
-                        <div class="media-tag-text">MOBILE BROWSER HTTP SOCKET ON/OFF TEST</div>
-                        <div class="media-dim-badge">MP4 / WEBM · 1080p · 60 FPS</div>
-                      </div>
-                      <div class="media-caption">
-                        <strong>Demo 1.1:</strong> Live real-time demonstration of local smartphone browser toggling ESP32 GPIO with zero cloud latency.
-                      </div>
+                <!-- Photo 2 -->
+                <div class="iot-media-item">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag">📷 DUAL PERSPECTIVE SETUP</div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-1/task1_circuit_setup_2.jpeg" data-caption="Dual-angle perspective of bare-metal GPIO actuation setup responding to local HTTP socket commands.">
+                      <img src="assets/iot/task-1/task1_circuit_setup_2.jpeg" alt="Hardware Circuit & Wiring" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Figure 1.2:</strong> Dual-angle perspective of bare-metal GPIO actuation setup responding to local HTTP socket commands.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Video 1 -->
+                <div class="iot-media-item iot-media-span-full">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag video-tag">🎥 REAL-TIME VIDEO DEMONSTRATION</div>
+                    <div class="iot-video-player-container">
+                      <video controls preload="metadata" playsinline class="iot-video-player">
+                        <source src="assets/iot/task-1/task1_esp32_webserver_demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Demonstration 1.1:</strong> Real-time screen capture of local smartphone browser toggling ESP32 GPIO over port 80 with sub-10ms latency.
                     </div>
                   </div>
                 </div>
@@ -722,42 +732,38 @@ void loop() {
           <!-- TAB 4: MEDIA GALLERY (PHOTOS & VIDEOS) -->
           <div class="iot-tab-pane" data-pane="media">
             <div class="iot-pane-content">
-              <h4 class="iot-subheading">Hardware Demonstrations, Circuit Photos & Video Logs</h4>
+              <h4 class="iot-subheading">Cloud Dashboard & Remote Load Switching Demonstration</h4>
               <p class="iot-media-intro">
-                Photographic telemetry dashboards and video evidence of optocoupler-isolated AC load switching over global MQTT brokers.
+                Photographic dashboard console and video demonstration of optocoupler-isolated AC load control via Adafruit IO MQTT streams.
               </p>
 
               <div class="iot-media-grid">
-                <!-- Photo Slot 2 -->
-                <div class="iot-media-card">
-                  <div class="iot-media-slot photo-slot" data-type="photo">
-                    <div class="media-placeholder-frame">
-                      <div class="media-icon-badge">📷 PHOTO PLACEHOLDER</div>
-                      <div class="media-visual-box">
-                        <span class="media-camera-symbol">📊</span>
-                        <div class="media-tag-text">ADAFRUIT IO CLOUD TELEMETRY DASHBOARD</div>
-                        <div class="media-dim-badge">1920 × 1080 · PNG · DASHBOARD UI</div>
-                      </div>
-                      <div class="media-caption">
-                        <strong>Figure 2.1:</strong> Adafruit IO cloud telemetry console showing live MQTT feed topics, stream graphs, and toggle switches.
-                      </div>
+                <!-- Photo 1 -->
+                <div class="iot-media-item">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag">📊 CLOUD TELEMETRY CONSOLE</div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-2/adafruit_io_dashboard_bulb.png" data-caption="Adafruit IO Cloud Dashboard — prajasri / Dashboards / Bulb with live MQTT topic feeds and switch widgets.">
+                      <img src="assets/iot/task-2/adafruit_io_dashboard_bulb.png" alt="Adafruit IO Cloud Dashboard" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Figure 2.1:</strong> Adafruit IO cloud telemetry console displaying real-time MQTT feed status, interactive toggle switches, and topic updates.
                     </div>
                   </div>
                 </div>
 
-                <!-- Video Slot 2 -->
-                <div class="iot-media-card">
-                  <div class="iot-media-slot video-slot" data-type="video">
-                    <div class="media-placeholder-frame video-frame">
-                      <div class="media-icon-badge video-badge">🎥 VIDEO PLACEHOLDER</div>
-                      <div class="media-visual-box video-box">
-                        <div class="media-play-button">▶</div>
-                        <div class="media-tag-text">MQTT CLOUD BULB ACTUATION & LATENCY TEST</div>
-                        <div class="media-dim-badge">MP4 · 1080p · 60 FPS</div>
-                      </div>
-                      <div class="media-caption">
-                        <strong>Demo 2.1:</strong> Video verification showing instantaneous AC bulb toggle when published from Adafruit IO cloud feed.
-                      </div>
+                <!-- Video 1 -->
+                <div class="iot-media-item">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag video-tag">🎥 MQTT CLOUD BULB ACTUATION</div>
+                    <div class="iot-video-player-container">
+                      <video controls preload="metadata" playsinline class="iot-video-player">
+                        <source src="assets/iot/task-2/task2_adafruit_mqtt_demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Demonstration 2.1:</strong> Video verification showing instantaneous AC bulb toggle when published from Adafruit IO cloud feed.
                     </div>
                   </div>
                 </div>
@@ -889,42 +895,24 @@ void loop() {
           <!-- TAB 4: MEDIA GALLERY (PHOTOS & VIDEOS) -->
           <div class="iot-tab-pane" data-pane="media">
             <div class="iot-pane-content">
-              <h4 class="iot-subheading">Hardware Demonstrations, Circuit Photos & Video Logs</h4>
+              <h4 class="iot-subheading">Automated Webhook Demonstration & Event Flow</h4>
               <p class="iot-media-intro">
-                Visual applet configuration maps and video evidence of serverless automated triggers firing hardware relays.
+                Video demonstration and architectural pipeline of serverless automated triggers firing physical hardware loads.
               </p>
 
               <div class="iot-media-grid">
-                <!-- Photo Slot 3 -->
-                <div class="iot-media-card">
-                  <div class="iot-media-slot photo-slot" data-type="photo">
-                    <div class="media-placeholder-frame">
-                      <div class="media-icon-badge">📷 PHOTO PLACEHOLDER</div>
-                      <div class="media-visual-box">
-                        <span class="media-camera-symbol">⚙️</span>
-                        <div class="media-tag-text">IFTTT APPLET LOGIC & WEBHOOK CONFIGURATION</div>
-                        <div class="media-dim-badge">1920 × 1080 · SCREENSHOT</div>
-                      </div>
-                      <div class="media-caption">
-                        <strong>Figure 3.1:</strong> IFTTT applet rules defining conditional parameters, webhook JSON body, and Adafruit IO REST API headers.
-                      </div>
+                <!-- Video 1 -->
+                <div class="iot-media-item iot-media-span-full">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag video-tag">🎥 AUTOMATED WEBHOOK TRIGGER DEMONSTRATION</div>
+                    <div class="iot-video-player-container">
+                      <video controls preload="metadata" playsinline class="iot-video-player">
+                        <source src="assets/iot/task-3/task3_ifttt_automation_demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
-                  </div>
-                </div>
-
-                <!-- Video Slot 3 -->
-                <div class="iot-media-card">
-                  <div class="iot-media-slot video-slot" data-type="video">
-                    <div class="media-placeholder-frame video-frame">
-                      <div class="media-icon-badge video-badge">🎥 VIDEO PLACEHOLDER</div>
-                      <div class="media-visual-box video-box">
-                        <div class="media-play-button">▶</div>
-                        <div class="media-tag-text">AUTOMATED IFTTT WEBHOOK HARDWARE TRIGGER DEMO</div>
-                        <div class="media-dim-badge">MP4 · 1080p · 60 FPS</div>
-                      </div>
-                      <div class="media-caption">
-                        <strong>Demo 3.1:</strong> Video showing an external event trigger dispatching an HTTP POST webhook that actuates physical hardware.
-                      </div>
+                    <div class="iot-media-caption">
+                      <strong>Demonstration 3.1:</strong> Video showing an external event trigger dispatching an HTTP POST webhook that actuates physical hardware without local micro-controller code polling.
                     </div>
                   </div>
                 </div>
@@ -1090,42 +1078,92 @@ void loop() {
           <!-- TAB 4: MEDIA GALLERY (PHOTOS & VIDEOS) -->
           <div class="iot-tab-pane" data-pane="media">
             <div class="iot-pane-content">
-              <h4 class="iot-subheading">Hardware Demonstrations, Circuit Photos & Video Logs</h4>
+              <h4 class="iot-subheading">Firebase RTDB & Multi-Sensor Hardware Gallery</h4>
               <p class="iot-media-intro">
-                Photographic circuit breadboard layout and video demonstration of live Firebase real-time database sync and multi-sensor readings.
+                Complete photo collection documenting the Firebase Realtime Database cloud dashboard, live circuit breadboard, sensor transducers, and isolated relay modules.
               </p>
 
-              <div class="iot-media-grid">
-                <!-- Photo Slot 4 -->
-                <div class="iot-media-card">
-                  <div class="iot-media-slot photo-slot" data-type="photo">
-                    <div class="media-placeholder-frame">
-                      <div class="media-icon-badge">📷 PHOTO PLACEHOLDER</div>
-                      <div class="media-visual-box">
-                        <span class="media-camera-symbol">🔌</span>
-                        <div class="media-tag-text">MULTI-SENSOR CIRCUIT SETUP (DHT11 + LDR + ESP32)</div>
-                        <div class="media-dim-badge">1920 × 1080 · HARDWARE SETUP</div>
-                      </div>
-                      <div class="media-caption">
-                        <strong>Figure 4.1:</strong> ESP32 wired with DHT11 temperature/humidity sensor, analog LDR voltage divider, and isolated relay module.
-                      </div>
+              <div class="iot-photo-gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="iot-media-item">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag">🔥 FIREBASE RTDB DASHBOARD</div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-4/firebase_dashboard_1.jpeg" data-caption="Google Firebase Realtime Database Console — live telemetry JSON nodes and appliance control state tree.">
+                      <img src="assets/iot/task-4/firebase_dashboard_1.jpeg" alt="Firebase RTDB Console" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Figure 4.1:</strong> Google Firebase Realtime Database console reflecting instant sensor value updates and boolean appliance states.
                     </div>
                   </div>
                 </div>
 
-                <!-- Video Slot 4 -->
-                <div class="iot-media-card">
-                  <div class="iot-media-slot video-slot" data-type="video">
-                    <div class="media-placeholder-frame video-frame">
-                      <div class="media-icon-badge video-badge">🎥 VIDEO PLACEHOLDER</div>
-                      <div class="media-visual-box video-box">
-                        <div class="media-play-button">▶</div>
-                        <div class="media-tag-text">FIREBASE RTDB LIVE TELEMETRY & THRESHOLD DEMO</div>
-                        <div class="media-dim-badge">MP4 · 1080p · 60 FPS</div>
-                      </div>
-                      <div class="media-caption">
-                        <strong>Demo 4.1:</strong> Live screen recording demonstrating instant Firebase database values updating alongside physical sensor stimulus.
-                      </div>
+                <!-- Gallery Item 2 -->
+                <div class="iot-media-item">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag">🔌 CIRCUIT BREADBOARD</div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-4/firebase_circuit_2.jpeg" data-caption="Mixed-signal breadboard circuitry interfacing DHT11 digital and LDR analog sensors with ESP32.">
+                      <img src="assets/iot/task-4/firebase_circuit_2.jpeg" alt="Circuit Breadboard" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Figure 4.2:</strong> Physical prototype board interfacing digital 1-wire and analog sensor lines with the ESP32 microcontroller.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="iot-media-item">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag">💡 LDR SENSOR NETWORK</div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-4/firebase_sensor_3.jpeg" data-caption="Calibrated analog LDR optical sensor and precision voltage divider network.">
+                      <img src="assets/iot/task-4/firebase_sensor_3.jpeg" alt="LDR Light Sensor Network" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Figure 4.3:</strong> Calibrated LDR ambient optical sensor wired into the ESP32 12-bit successive approximation ADC channel.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="iot-media-item">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag">🌡️ DHT11 TRANSDUCER</div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-4/firebase_readings_4.jpeg" data-caption="DHT11 single-wire digital humidity and temperature transducer wiring on active prototype board.">
+                      <img src="assets/iot/task-4/firebase_readings_4.jpeg" alt="DHT11 Transducer" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Figure 4.4:</strong> DHT11 digital environmental transducer connected to GPIO 4 for single-bus microsecond timing acquisition.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="iot-media-item">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag">⚡ ISOLATED RELAY NODE</div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-4/firebase_hardware_5.jpeg" data-caption="Hardware system overview showing 5V isolated relay module, microcontroller, and sensor arrays.">
+                      <img src="assets/iot/task-4/firebase_hardware_5.jpeg" alt="Isolated Relay Node" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Figure 4.5:</strong> 5V optocoupler-isolated relay module connected to ESP32 digital output for dual-mode automated switching.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="iot-media-item">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag">🔬 TESTING BENCH</div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-4/firebase_circuit_6.jpeg" data-caption="Live environmental threshold benchmarking and testing bench with real-time WebSocket sync.">
+                      <img src="assets/iot/task-4/firebase_circuit_6.jpeg" alt="Testing Bench" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Figure 4.6:</strong> Comprehensive environmental testing setup validating hysteresis threshold switching and database sync.
                     </div>
                   </div>
                 </div>
@@ -1275,42 +1313,52 @@ export function exportTelemetryToCSV(telemetryDataset) {
           <!-- TAB 4: MEDIA GALLERY (PHOTOS & VIDEOS) -->
           <div class="iot-tab-pane" data-pane="media">
             <div class="iot-pane-content">
-              <h4 class="iot-subheading">Hardware Demonstrations, Circuit Photos & Video Logs</h4>
+              <h4 class="iot-subheading">Telemetry Logs, Circuit Interfacing & CSV Export Demonstration</h4>
               <p class="iot-media-intro">
-                Photographic logs of timestamped serial monitor telemetry data and video demonstration of client-side CSV dataset extraction.
+                Photographic logs of timestamped serial monitor telemetry data and video demonstration of dynamic CSV dataset generation.
               </p>
 
               <div class="iot-media-grid">
-                <!-- Photo Slot 5 -->
-                <div class="iot-media-card">
-                  <div class="iot-media-slot photo-slot" data-type="photo">
-                    <div class="media-placeholder-frame">
-                      <div class="media-icon-badge">📷 PHOTO PLACEHOLDER</div>
-                      <div class="media-visual-box">
-                        <span class="media-camera-symbol">💻</span>
-                        <div class="media-tag-text">SERIAL MONITOR TELEMETRY & TIMESTAMPED LOGS</div>
-                        <div class="media-dim-badge">1920 × 1080 · TERMINAL LOGS</div>
-                      </div>
-                      <div class="media-caption">
-                        <strong>Figure 5.1:</strong> ESP32 UART serial terminal output displaying continuous time-stamped multi-sensor telemetry packets.
-                      </div>
+                <!-- Photo 1 -->
+                <div class="iot-media-item">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag">💻 SERIAL MONITOR UART LOGS</div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-5/task5_serial_monitor_log.jpg" data-caption="ESP32 UART serial terminal output displaying continuous time-stamped multi-sensor telemetry packets.">
+                      <img src="assets/iot/task-5/task5_serial_monitor_log.jpg" alt="Serial Monitor Telemetry Logs" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Figure 5.1:</strong> ESP32 UART serial terminal output displaying continuous time-stamped multi-sensor telemetry packets.
                     </div>
                   </div>
                 </div>
 
-                <!-- Video Slot 5 -->
-                <div class="iot-media-card">
-                  <div class="iot-media-slot video-slot" data-type="video">
-                    <div class="media-placeholder-frame video-frame">
-                      <div class="media-icon-badge video-badge">🎥 VIDEO PLACEHOLDER</div>
-                      <div class="media-visual-box video-box">
-                        <div class="media-play-button">▶</div>
-                        <div class="media-tag-text">CSV DATASET QUERY & INSTANT EXPORT DEMO</div>
-                        <div class="media-dim-badge">MP4 · 1080p · 60 FPS</div>
-                      </div>
-                      <div class="media-caption">
-                        <strong>Demo 5.1:</strong> Demonstration of client-side script parsing Firebase historical records and downloading an RFC 4180 CSV report.
-                      </div>
+                <!-- Photo 2 -->
+                <div class="iot-media-item">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag">🔌 COMPLETE HARDWARE BENCH</div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-5/task5_circuit_breadboard.jpg" data-caption="Complete physical telemetry node and multi-sensor interfacing layout.">
+                      <img src="assets/iot/task-5/task5_circuit_breadboard.jpg" alt="Hardware Breadboard Setup" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Figure 5.2:</strong> Physical prototype circuit setup with ESP32 SoC and multi-sensor arrays on active breadboard.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Video 1 -->
+                <div class="iot-media-item iot-media-span-full">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag video-tag">🎥 CSV EXPORT ENGINE DEMONSTRATION</div>
+                    <div class="iot-video-player-container">
+                      <video controls preload="metadata" playsinline class="iot-video-player">
+                        <source src="assets/iot/task-5/task5_csv_export_demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Demonstration 5.1:</strong> Screen demonstration of client-side script querying Firebase time-series history and generating an RFC 4180 CSV export report.
                     </div>
                   </div>
                 </div>
@@ -1577,7 +1625,7 @@ export function exportTelemetryToCSV(telemetryDataset) {
   <div class="media-modal-overlay" id="media-modal-overlay">
     <div class="media-modal-card">
       <div class="media-modal-header">
-        <span class="media-modal-title" id="media-modal-title">MEDIA PLACEHOLDER</span>
+        <span class="media-modal-title" id="media-modal-title">HARDWARE INSPECTION // PREVIEW</span>
         <button class="media-modal-close" id="media-modal-close" aria-label="Close Preview">✕</button>
       </div>
       <div class="media-modal-body" id="media-modal-body">

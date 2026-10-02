@@ -197,27 +197,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 8. IoT Media Placeholder Lightbox Modal Controller
+  // 8. IoT Image Lightbox Modal Controller
   const mediaModalOverlay = document.getElementById('media-modal-overlay');
   const mediaModalTitle = document.getElementById('media-modal-title');
   const mediaModalBody = document.getElementById('media-modal-body');
   const mediaModalClose = document.getElementById('media-modal-close');
 
-  function openMediaModal(type, title, caption) {
+  function openImageLightbox(src, caption) {
     if (!mediaModalOverlay || !mediaModalBody) return;
     
-    const isVideo = type === 'video';
-    mediaModalTitle.textContent = isVideo ? '🎥 VIDEO DEMONSTRATION SLOT' : '📷 PHOTO CAPTURE SLOT';
+    mediaModalTitle.textContent = '🔍 HARDWARE IMAGE PREVIEW';
     
     mediaModalBody.innerHTML = `
-      <div style="background:var(--bg-color); border:2px dashed var(--border-dark); padding:1.5rem; border-radius:var(--radius-sm); text-align:center;">
-        <div style="font-size:2.8rem; margin-bottom:0.5rem;">${isVideo ? '🎬' : '🖼️'}</div>
-        <div style="font-family:var(--font-pixel); font-size:1rem; color:var(--text-primary); margin-bottom:0.5rem;">${title}</div>
-        <p style="font-size:0.875rem; color:var(--text-secondary);">${caption}</p>
-      </div>
-      <div style="background:var(--accent-pink-light); border:1.5px solid var(--accent-pink); padding:1rem; border-radius:var(--radius-sm); font-size:0.85rem; color:var(--text-primary);">
-        <strong style="color:var(--accent-pink); font-family:var(--font-pixel); display:block; margin-bottom:4px;">✦ MEDIA PLACEHOLDER GUIDE:</strong>
-        To place your real photos or videos here, drop your files in the <code>images/</code> or <code>videos/</code> directory and link them in the <code>&lt;img&gt;</code> or <code>&lt;video controls&gt;</code> tags!
+      <img src="${src}" alt="Hardware Preview" class="modal-full-img" />
+      <div class="modal-caption-text">
+        <strong>Description:</strong> ${caption || 'Hardware Circuit Documentation'}
       </div>
     `;
 
@@ -232,16 +226,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  document.querySelectorAll('.iot-media-slot').forEach(slot => {
-    slot.addEventListener('click', () => {
-      const type = slot.getAttribute('data-type') || 'photo';
-      const tagTextElem = slot.querySelector('.media-tag-text');
-      const captionElem = slot.querySelector('.media-caption');
-      
-      const title = tagTextElem ? tagTextElem.textContent : 'Hardware Media';
-      const caption = captionElem ? captionElem.textContent : 'Recorded IoT Demonstration';
-      
-      openMediaModal(type, title, caption);
+  document.querySelectorAll('.iot-img-wrapper').forEach(wrapper => {
+    wrapper.addEventListener('click', () => {
+      const src = wrapper.getAttribute('data-src');
+      const caption = wrapper.getAttribute('data-caption');
+      if (src) {
+        openImageLightbox(src, caption);
+      }
     });
   });
 
