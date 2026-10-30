@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="flow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#ff2b85"/>
+      <stop offset="100%" stop-color="#00e676"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="420" fill="#090d16"/>
+
+  <text x="30" y="40" fill="#ff2b85" font-family="-apple-system, sans-serif" font-size="16" font-weight="700" letter-spacing="1.5">TASK 03 // IFTTT EVENT AUTOMATION &amp; DATAFLOW PIPELINE</text>
+  <text x="30" y="62" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12">Voice Assistant / Cron Temporal Trigger → IFTTT Webhook → Adafruit IO MQTT → ESP32 Edge Actuator</text>
+
+  <!-- Flow Boxes -->
+  <!-- Step 1: Voice / Timer -->
+  <g transform="translate(30, 110)">
+    <rect width="130" height="160" rx="8" fill="#131b2c" stroke="#334155" stroke-width="2"/>
+    <text x="65" y="32" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" text-anchor="middle">EVENT TRIGGER</text>
+    <circle cx="65" cy="70" r="22" fill="#0284c7" opacity="0.2"/>
+    <text x="65" y="77" fill="#38bdf8" font-size="20" text-anchor="middle">🎙️</text>
+    <text x="65" y="112" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" text-anchor="middle">Google Assistant</text>
+    <text x="65" y="128" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">"Ok Google, Bulb"</text>
+    <text x="65" y="146" fill="#64748b" font-family="monospace" font-size="8" text-anchor="middle">or Temporal Cron</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M 160 190 L 190 190" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="175" y="180" fill="#38bdf8" font-family="monospace" font-size="8" text-anchor="middle">Cloud</text>
+
+  <!-- Step 2: IFTTT Engine -->
+  <g transform="translate(190, 110)">
+    <rect width="130" height="160" rx="8" fill="#131b2c" stroke="#334155" stroke-width="2"/>
+    <text x="65" y="32" fill="#f59e0b" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" text-anchor="middle">IFTTT SERVICE</text>
+    <circle cx="65" cy="70" r="22" fill="#d97706" opacity="0.2"/>
+    <text x="65" y="77" fill="#f59e0b" font-size="20" text-anchor="middle">🪝</text>
+    <text x="65" y="112" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" text-anchor="middle">Applet Dispatcher</text>
+    <text x="65" y="128" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">HTTP POST Webhook</text>
+    <text x="65" y="146" fill="#64748b" font-family="monospace" font-size="8" text-anchor="middle">JSON Payload: "ON"</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M 320 190 L 350 190" stroke="#f59e0b" stroke-width="2.5" fill="none"/>
+  <text x="335" y="180" fill="#f59e0b" font-family="monospace" font-size="8" text-anchor="middle">REST</text>
+
+  <!-- Step 3: Adafruit IO -->
+  <g transform="translate(350, 110)">
+    <rect width="130" height="160" rx="8" fill="#131b2c" stroke="#ff2b85" stroke-width="2"/>
+    <text x="65" y="32" fill="#ff2b85" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" text-anchor="middle">ADAFRUIT IO</text>
+    <circle cx="65" cy="70" r="22" fill="#ff2b85" opacity="0.2"/>
+    <text x="65" y="77" fill="#ff2b85" font-size="20" text-anchor="middle">☁️</text>
+    <text x="65" y="112" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" text-anchor="middle">Cloud Broker</text>
+    <text x="65" y="128" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">Feed: relay-feed</text>
+    <text x="65" y="146" fill="#64748b" font-family="monospace" font-size="8" text-anchor="middle">MQTT Topic Publish</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M 480 190 L 510 190" stroke="#ff2b85" stroke-width="2.5" fill="none"/>
+  <text x="495" y="180" fill="#ff2b85" font-family="monospace" font-size="8" text-anchor="middle">MQTT</text>
+
+  <!-- Step 4: ESP32 Node -->
+  <g transform="translate(510, 110)">
+    <rect width="120" height="160" rx="8" fill="#131b2c" stroke="#334155" stroke-width="2"/>
+    <text x="60" y="32" fill="#00e676" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" text-anchor="middle">ESP32 NODE</text>
+    <circle cx="60" cy="70" r="22" fill="#00e676" opacity="0.2"/>
+    <text x="60" y="77" fill="#00e676" font-size="20" text-anchor="middle">⚡</text>
+    <text x="60" y="112" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" text-anchor="middle">MQTT Subscriber</text>
+    <text x="60" y="128" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">TCP Port 1883</text>
+    <text x="60" y="146" fill="#64748b" font-family="monospace" font-size="8" text-anchor="middle">digitalWrite(5, LOW)</text>
+  </g>
+
+  <!-- Arrow 4 -->
+  <path d="M 630 190 L 660 190" stroke="#00e676" stroke-width="2.5" fill="none"/>
+  <text x="645" y="180" fill="#00e676" font-family="monospace" font-size="8" text-anchor="middle">GPIO</text>
+
+  <!-- Step 5: Appliance Bulb -->
+  <g transform="translate(660, 110)">
+    <rect width="110" height="160" rx="8" fill="#131b2c" stroke="#00e676" stroke-width="2"/>
+    <text x="55" y="32" fill="#fde047" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" text-anchor="middle">ACTUATOR</text>
+    <circle cx="55" cy="70" r="22" fill="#eab308" opacity="0.2"/>
+    <text x="55" y="77" fill="#fde047" font-size="20" text-anchor="middle">💡</text>
+    <text x="55" y="112" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" text-anchor="middle">230V AC Lamp</text>
+    <text x="55" y="128" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">SRD-05VDC Relay</text>
+    <text x="55" y="146" fill="#00e676" font-family="monospace" font-size="8" text-anchor="middle">ENERGIZED ON</text>
+  </g>
+
+  <!-- Bottom latency timeline bar -->
+  <g transform="translate(30, 310)">
+    <rect width="740" height="70" rx="8" fill="#131b2c" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="20" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">MEASURED END-TO-END PIPELINE LATENCIES</text>
+    <text x="20" y="48" fill="#94a3b8" font-family="monospace" font-size="10">Voice/Timer Trigger → IFTTT Engine: ~450ms | IFTTT Webhook → Adafruit IO: ~620ms | MQTT Broker → ESP32: ~85ms | Total: ~1.15s</text>
+  </g>
+</svg>

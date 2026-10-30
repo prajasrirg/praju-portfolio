@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <rect width="800" height="500" fill="#0b0f19" />
+
+  <!-- Center Card -->
+  <g transform="translate(200, 50)">
+    <rect width="400" height="400" rx="12" fill="#131b2a" stroke="#2d3748" stroke-width="2"/>
+    
+    <!-- Lock Icon -->
+    <circle cx="200" cy="55" r="25" fill="#ff2b85" opacity="0.15"/>
+    <text x="200" y="64" font-size="24" text-anchor="middle">🔒</text>
+
+    <text x="200" y="110" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="17" font-weight="800" text-anchor="middle">Firebase IoT Portal Gate</text>
+    <text x="200" y="130" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11" text-anchor="middle">Operator Authentication &amp; RBAC Control</text>
+
+    <!-- Input 1 -->
+    <text x="50" y="170" fill="#94a3b8" font-family="monospace" font-size="10">OPERATOR EMAIL</text>
+    <rect x="50" y="180" width="300" height="40" rx="6" fill="#0b0f19" stroke="#334155" stroke-width="1.5"/>
+    <text x="65" y="205" fill="#f8fafc" font-family="monospace" font-size="11">operator@praju-iot.internal</text>
+
+    <!-- Input 2 -->
+    <text x="50" y="245" fill="#94a3b8" font-family="monospace" font-size="10">PASSWORD / SECURITY TOKEN</text>
+    <rect x="50" y="255" width="300" height="40" rx="6" fill="#0b0f19" stroke="#334155" stroke-width="1.5"/>
+    <text x="65" y="280" fill="#ff2b85" font-family="monospace" font-size="14" letter-spacing="3">••••••••••••••••</text>
+
+    <!-- Login Button -->
+    <rect x="50" y="315" width="300" height="45" rx="6" fill="#00e676"/>
+    <text x="200" y="343" fill="#0b0f19" font-family="-apple-system, sans-serif" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">AUTHENTICATE VIA FIREBASE AUTH</text>
+
+    <!-- Security Info -->
+    <text x="200" y="385" fill="#64748b" font-family="monospace" font-size="9" text-anchor="middle">AuthN: JSON Web Tokens (JWT) • AuthZ: Database Security Rules</text>
+  </g>
+</svg>

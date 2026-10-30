@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+  <rect width="800" height="520" fill="#0b0f19" />
+
+  <g transform="translate(30, 20)">
+    <!-- Header -->
+    <text x="0" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="16" font-weight="800">Historical Telemetry Archives &amp; CSV Analytics</text>
+    <text x="0" y="48" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">Time-series data queried from Firebase RTDB with in-browser RFC 4180 CSV export</text>
+
+    <!-- Export Button -->
+    <g transform="translate(480, 10)">
+      <rect width="260" height="42" rx="6" fill="#00e676"/>
+      <text x="130" y="26" fill="#0b0f19" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" text-anchor="middle">📥 EXPORT CSV (W3C BLOB)</text>
+    </g>
+
+    <!-- Table Container -->
+    <rect y="70" width="740" height="400" rx="8" fill="#131b2a" stroke="#2d3748" stroke-width="1.5"/>
+
+    <!-- Table Header -->
+    <rect y="70" width="740" height="40" rx="8" fill="#1e293b"/>
+    <text x="25" y="95" fill="#cbd5e1" font-family="monospace" font-size="10" font-weight="700">TIMESTAMP (EPOCH MS)</text>
+    <text x="200" y="95" fill="#cbd5e1" font-family="monospace" font-size="10" font-weight="700">DATE &amp; TIME</text>
+    <text x="360" y="95" fill="#cbd5e1" font-family="monospace" font-size="10" font-weight="700">TEMP (°C)</text>
+    <text x="445" y="95" fill="#cbd5e1" font-family="monospace" font-size="10" font-weight="700">HUM (%)</text>
+    <text x="525" y="95" fill="#cbd5e1" font-family="monospace" font-size="10" font-weight="700">LIGHT (ADC)</text>
+    <text x="630" y="95" fill="#cbd5e1" font-family="monospace" font-size="10" font-weight="700">RELAY / MODE</text>
+
+    <!-- Row 1 -->
+    <g transform="translate(0, 110)">
+      <text x="25" y="25" fill="#f59e0b" font-family="monospace" font-size="10">1730272800000</text>
+      <text x="200" y="25" fill="#f8fafc" font-family="monospace" font-size="10">2026-10-30 14:00:00</text>
+      <text x="360" y="25" fill="#00e676" font-family="monospace" font-size="10">28.4</text>
+      <text x="445" y="25" fill="#38bdf8" font-family="monospace" font-size="10">61.2</text>
+      <text x="525" y="25" fill="#f59e0b" font-family="monospace" font-size="10">940</text>
+      <text x="630" y="25" fill="#00e676" font-family="monospace" font-size="10">ON [AUTO]</text>
+      <line x1="10" y1="38" x2="730" y2="38" stroke="#1e293b" stroke-width="1"/>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(0, 150)">
+      <text x="25" y="25" fill="#f59e0b" font-family="monospace" font-size="10">1730272802500</text>
+      <text x="200" y="25" fill="#f8fafc" font-family="monospace" font-size="10">2026-10-30 14:00:02</text>
+      <text x="360" y="25" fill="#00e676" font-family="monospace" font-size="10">28.4</text>
+      <text x="445" y="25" fill="#38bdf8" font-family="monospace" font-size="10">61.3</text>
+      <text x="525" y="25" fill="#f59e0b" font-family="monospace" font-size="10">938</text>
+      <text x="630" y="25" fill="#00e676" font-family="monospace" font-size="10">ON [AUTO]</text>
+      <line x1="10" y1="38" x2="730" y2="38" stroke="#1e293b" stroke-width="1"/>
+    </g>
+
+    <!-- Row 3 -->
+    <g transform="translate(0, 190)">
+      <text x="25" y="25" fill="#f59e0b" font-family="monospace" font-size="10">1730272805000</text>
+      <text x="200" y="25" fill="#f8fafc" font-family="monospace" font-size="10">2026-10-30 14:00:05</text>
+      <text x="360" y="25" fill="#00e676" font-family="monospace" font-size="10">28.5</text>
+      <text x="445" y="25" fill="#38bdf8" font-family="monospace" font-size="10">61.1</text>
+      <text x="525" y="25" fill="#f59e0b" font-family="monospace" font-size="10">942</text>
+      <text x="630" y="25" fill="#00e676" font-family="monospace" font-size="10">ON [AUTO]</text>
+      <line x1="10" y1="38" x2="730" y2="38" stroke="#1e293b" stroke-width="1"/>
+    </g>
+
+    <!-- Row 4 -->
+    <g transform="translate(0, 230)">
+      <text x="25" y="25" fill="#f59e0b" font-family="monospace" font-size="10">1730272807500</text>
+      <text x="200" y="25" fill="#f8fafc" font-family="monospace" font-size="10">2026-10-30 14:00:07</text>
+      <text x="360" y="25" fill="#00e676" font-family="monospace" font-size="10">28.5</text>
+      <text x="445" y="25" fill="#38bdf8" font-family="monospace" font-size="10">61.0</text>
+      <text x="525" y="25" fill="#f59e0b" font-family="monospace" font-size="10">945</text>
+      <text x="630" y="25" fill="#00e676" font-family="monospace" font-size="10">ON [AUTO]</text>
+      <line x1="10" y1="38" x2="730" y2="38" stroke="#1e293b" stroke-width="1"/>
+    </g>
+
+    <!-- Footer Summary -->
+    <g transform="translate(20, 430)">
+      <text x="0" y="20" fill="#94a3b8" font-family="monospace" font-size="10">Query Window: Last 500 Records • Pagination: Page 1 of 25 • Export Format: RFC 4180 Comma Separated Values</text>
+    </g>
+  </g>
+</svg>

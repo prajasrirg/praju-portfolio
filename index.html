@@ -503,6 +503,53 @@
                 </table>
               </div>
 
+              <!-- Circuit & Wiring Schematic Diagram -->
+              <h4 class="iot-subheading" style="margin-top:1.5rem;">Hardware Circuit Schematic &amp; Breadboard Wiring Diagram</h4>
+              <p class="iot-prose">
+                The ESP32 interfaces with a 5mm optical LED actuator via a $330\Omega$ current-limiting resistor to protect the silicon output driver from excessive current draw:
+              </p>
+              
+              <!-- ASCII Circuit Diagram Block -->
+              <div class="iot-code-container" style="margin: 0.75rem 0 1.25rem;">
+                <div class="iot-code-header">
+                  <div class="iot-code-filename">
+                    <span class="dot-btn dot-red"></span>
+                    <span class="dot-btn dot-yellow"></span>
+                    <span class="dot-btn dot-green"></span>
+                    <span>ESP32_LED_Circuit_Schematic.txt</span>
+                  </div>
+                  <span class="iot-badge iot-badge-pink" style="font-size:0.7rem;">ASCII SCHEMATIC</span>
+                </div>
+                <pre class="iot-code-block" style="font-size:0.8rem; line-height:1.45;"><code id="code-task-01-schematic">+-------------------------------------------------------------------------+
+|                  HARDWARE CIRCUIT &amp; WIRING SCHEMATIC                    |
++-------------------------------------------------------------------------+
+|                                                                         |
+|    +----------------------+                                             |
+|    |     ESP32 DevKit     |                                             |
+|    |                      |                                             |
+|    |    [GPIO 2 (D2)] ----+----[ 330Ω Resistor ]----+                   |
+|    |      (3.3V TTL)      |                         |                   |
+|    |                      |                     (Anode +)               |
+|    |                      |                    [ 5mm LED ]              |
+|    |                      |                   (Cathode -)               |
+|    |                      |                         |                   |
+|    |        [GND] --------+-------------------------+                   |
+|    |      (0V Common)     |                  (Ground Rail)              |
+|    |                      |                                             |
+|    |     [3V3 / VIN] -----+----> Breadboard Power Distribution Bus      |
+|    |                      |                                             |
+|    +----------------------+                                             |
+|                                                                         |
+|    Current: I = (3.3V - 2.0V) / 330Ω ≈ 3.94mA &lt; 12mA max GPIO rating    |
++-------------------------------------------------------------------------+</code></pre>
+              </div>
+
+              <!-- SVG Visual Circuit Diagram -->
+              <div class="iot-img-wrapper" data-src="assets/iot/task-1/task1_circuit_schematic.svg" data-caption="ESP32 DevKit V1 to 5mm LED circuit schematic with 330Ω current-limiting resistor and breadboard interconnects." style="margin-bottom:1.5rem; border-radius:var(--radius-sm); overflow:hidden; border:1.5px solid var(--border-dark);">
+                <img src="assets/iot/task-1/task1_circuit_schematic.svg" alt="ESP32 LED Circuit Schematic Diagram" class="iot-img" loading="lazy" style="width:100%; display:block;">
+                <div class="iot-img-overlay"><span>🔍 View Full Resolution Schematic</span></div>
+              </div>
+
               <h4 class="iot-subheading" style="margin-top:1.5rem;">Browser-to-ESP32 Wi-Fi Communication Protocol Flow</h4>
               <ul class="iot-feature-list">
                 <li><strong>1. Station (STA) Network Association:</strong> ESP32 negotiates WPA2-PSK authentication with the local Wi-Fi router, obtaining a local subnet IP (e.g., <code>192.168.1.105</code>) via DHCP.</li>
@@ -745,15 +792,12 @@ void loop() {
                 <div class="iot-media-item">
                   <div class="iot-media-frame">
                     <div class="iot-media-badge-tag">🌐 WEB CONTROL INTERFACE</div>
-                    <div class="iot-img-wrapper" data-src="assets/iot/task-1/task1_circuit_setup_1.jpeg" data-caption="ESP32-hosted local browser interface on port 80 with POWER ON and POWER OFF buttons.">
-                      <div class="iot-placeholder-frame">
-                        <span class="iot-placeholder-icon">📱</span>
-                        <div class="iot-placeholder-title">HTTP WEB SERVER CLIENT UI</div>
-                        <div class="iot-placeholder-hint">Browser control page served from ESP32 RAM (<code>http://esp32-webserver.local</code>)</div>
-                      </div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-1/task1_web_server_ui.svg" data-caption="Responsive HTML5 web control interface served from ESP32 RAM (http://esp32-webserver.local) with sub-10ms GPIO toggle controls.">
+                      <img src="assets/iot/task-1/task1_web_server_ui.svg" alt="ESP32 Web Server Browser Interface" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
                     </div>
                     <div class="iot-media-caption">
-                      <strong>Figure 1.3:</strong> Responsive HTML5 web control interface rendered on a mobile browser over the local Wi-Fi subnet.
+                      <strong>Figure 1.3:</strong> Responsive HTML5 web control interface rendered on a client browser over the local Wi-Fi subnet.
                     </div>
                   </div>
                 </div>
@@ -1125,12 +1169,9 @@ void loop() {
                 <div class="iot-media-item">
                   <div class="iot-media-frame">
                     <div class="iot-media-badge-tag">🔌 HARDWARE PROTOTYPE BENCH</div>
-                    <div class="iot-img-wrapper" data-src="assets/iot/task-2/adafruit_io_dashboard_bulb.png" data-caption="Physical hardware setup displaying ESP32 SoC wired to 5V optocoupler relay module and 230V AC lamp load.">
-                      <div class="iot-placeholder-frame">
-                        <span class="iot-placeholder-icon">💡</span>
-                        <div class="iot-placeholder-title">AC LOAD HARDWARE SETUP</div>
-                        <div class="iot-placeholder-hint">ESP32 DevKit wired to 5V Optocoupled Relay &amp; 230V AC Mains Test Bulb (<code>assets/iot/task-2/task2_hardware_setup.jpg</code>)</div>
-                      </div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-2/task2_hardware_setup.svg" data-caption="Physical hardware setup displaying ESP32 SoC wired to 5V optocoupler relay module and 230V AC lamp load.">
+                      <img src="assets/iot/task-2/task2_hardware_setup.svg" alt="Hardware Setup: ESP32 + Relay + AC Bulb" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
                     </div>
                     <div class="iot-media-caption">
                       <strong>Figure 2.2:</strong> Physical prototype assembly showing ESP32, optical isolation relay module, and 230V AC mains test load wiring.
@@ -1196,11 +1237,17 @@ void loop() {
                 IFTTT operates on a universal <strong>Trigger $\to$ Action</strong> event-driven model:
               </p>
               <ul class="iot-feature-list">
-                <li><strong>Trigger ("If This"):</strong> An external temporal event (e.g., cron scheduler set to trigger daily at 10:00 AM) or a third-party service webhook fires automatically within the IFTTT cloud engine.</li>
-                <li><strong>Action ("Then That"):</strong> The IFTTT Webhook service formats and dispatches an authenticated HTTP POST request to the Adafruit IO REST API endpoint (<code>https://io.adafruit.com/api/v2/{username}/feeds/{feed_key}/data</code>).</li>
+                <li><strong>Trigger ("If This"):</strong> A voice assistant command via Google Assistant (e.g., saying <em>"Ok Google, activate Bulb"</em> or <em>"Ok Google, activate TURN off bulb"</em>) or an automated temporal cron scheduler fires within the IFTTT cloud engine.</li>
+                <li><strong>Action ("Then That"):</strong> The IFTTT cloud engine executes the configured <strong>"Send data to Adafruit IO"</strong> action, dispatching an authenticated HTTP POST request containing payload <code>"ON"</code> or <code>"OFF"</code> to the Adafruit IO REST API (<code>https://io.adafruit.com/api/v2/{username}/feeds/{feed_key}/data</code>).</li>
                 <li><strong>Cloud Intermediary Role:</strong> Adafruit IO validates the incoming webhook payload, updates the feed record, and immediately broadcasts the updated value to connected MQTT subscribers.</li>
-                <li><strong>Edge Actuation:</strong> The ESP32 receives the broker broadcast via its persistent MQTT subscription and actuates the physical relay contacts.</li>
+                <li><strong>Edge Actuation:</strong> The ESP32 receives the broker broadcast via its persistent MQTT subscription on port 1883 and actuates the physical 5V optocoupled relay contacts, switching the 230V AC bulb.</li>
               </ul>
+
+              <!-- End-to-End Dataflow Diagram -->
+              <div class="iot-img-wrapper" data-src="assets/iot/task-3/task3_automation_flow.svg" data-caption="End-to-end dataflow sequence diagram mapping Google Assistant voice command to IFTTT webhook, Adafruit IO MQTT broker, and ESP32 edge actuation." style="margin: 1.25rem 0; border-radius:var(--radius-sm); overflow:hidden; border:1.5px solid var(--border-dark);">
+                <img src="assets/iot/task-3/task3_automation_flow.svg" alt="IFTTT to Adafruit IO Communication Flow Diagram" class="iot-img" loading="lazy" style="width:100%; display:block;">
+                <div class="iot-img-overlay"><span>🔍 View Full Resolution Dataflow Diagram</span></div>
+              </div>
 
               <h4 class="iot-subheading" style="margin-top:1.5rem;">Hardware Bill of Materials &amp; Pin Connections</h4>
               <div class="iot-table-wrapper">
@@ -1446,7 +1493,7 @@ void loop() {
                 <div class="iot-media-item">
                   <div class="iot-media-frame">
                     <div class="iot-media-badge-tag">🪝 IFTTT APPLET CONFIGURATION</div>
-                    <div class="iot-img-wrapper" data-src="assets/iot/task-3/task3_ifttt_applet_config.jpg" data-caption="About this Applet: Google Assistant 'Activate Scene' realtime trigger configured to send data to Adafruit IO feed.">
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-3/task3_ifttt_applet_config.jpg" data-caption="About this Applet: Google Assistant 'Activate scene' realtime trigger configured to send data to Adafruit IO feed.">
                       <img src="assets/iot/task-3/task3_ifttt_applet_config.jpg" alt="IFTTT Applet Configuration — Google Assistant to Adafruit IO" class="iot-img" loading="lazy">
                       <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
                     </div>
@@ -1466,6 +1513,20 @@ void loop() {
                     </div>
                     <div class="iot-media-caption">
                       <strong>Figure 3.2:</strong> Configured IFTTT active applets dashboard establishing dual voice assistant routines ("activate Bulb" and "activate TURN off bulb") targeting Adafruit IO.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Screenshot 3: Dataflow Architecture Diagram -->
+                <div class="iot-media-item iot-media-span-full">
+                  <div class="iot-media-frame">
+                    <div class="iot-media-badge-tag">🔄 END-TO-END AUTOMATION FLOW</div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-3/task3_automation_flow.svg" data-caption="End-to-end dataflow sequence diagram mapping Google Assistant voice trigger to IFTTT webhook, Adafruit IO MQTT broker, and ESP32 edge actuation.">
+                      <img src="assets/iot/task-3/task3_automation_flow.svg" alt="End-to-End Automation Sequence Flow" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
+                    </div>
+                    <div class="iot-media-caption">
+                      <strong>Figure 3.3:</strong> Complete cloud-to-edge communication architecture illustrating measured latency stages from trigger to bulb actuation.
                     </div>
                   </div>
                 </div>
@@ -1988,12 +2049,9 @@ void loop() {
                 <div class="iot-media-item">
                   <div class="iot-media-frame">
                     <div class="iot-media-badge-tag">📊 WEB DASHBOARD UI</div>
-                    <div class="iot-img-wrapper" data-src="assets/iot/task-4/firebase_dashboard_1.jpeg" data-caption="Custom responsive web dashboard with live temperature/humidity gauges and appliance control switch.">
-                      <div class="iot-placeholder-frame">
-                        <span class="iot-placeholder-icon">💻</span>
-                        <div class="iot-placeholder-title">CUSTOM WEB DASHBOARD UI</div>
-                        <div class="iot-placeholder-hint">Real-time WebSocket gauges, charts &amp; dual-mode toggle switch (<code>assets/iot/task-4/firebase_web_dashboard.png</code>)</div>
-                      </div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-4/firebase_web_dashboard.svg" data-caption="Custom responsive web dashboard with live temperature/humidity gauges and appliance control switch.">
+                      <img src="assets/iot/task-4/firebase_web_dashboard.svg" alt="Firebase Web Dashboard UI" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
                     </div>
                     <div class="iot-media-caption">
                       <strong>Figure 4.7:</strong> Client-side HTML5/JavaScript dashboard rendering dynamic sensor gauges synced with Firebase RTDB.
@@ -2005,12 +2063,9 @@ void loop() {
                 <div class="iot-media-item">
                   <div class="iot-media-frame">
                     <div class="iot-media-badge-tag">🔒 AUTHENTICATION LOGIN</div>
-                    <div class="iot-img-wrapper" data-src="assets/iot/task-4/firebase_dashboard_1.jpeg" data-caption="Firebase Authentication portal with email/password credential validation for operator access.">
-                      <div class="iot-placeholder-frame">
-                        <span class="iot-placeholder-icon">🔐</span>
-                        <div class="iot-placeholder-title">SECURED LOGIN PORTAL</div>
-                        <div class="iot-placeholder-hint">Firebase Auth gate protecting remote appliance control (<code>assets/iot/task-4/firebase_login_page.png</code>)</div>
-                      </div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-4/firebase_login_page.svg" data-caption="Firebase Authentication portal with email/password credential validation for operator access.">
+                      <img src="assets/iot/task-4/firebase_login_page.svg" alt="Firebase Authentication Login Screen" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
                     </div>
                     <div class="iot-media-caption">
                       <strong>Figure 4.8:</strong> Operator login interface ensuring only authenticated personnel can trigger manual appliance overrides.
@@ -2382,12 +2437,9 @@ void logTelemetryRecord(float temp, float hum, int light, bool relay, const char
                 <div class="iot-media-item">
                   <div class="iot-media-frame">
                     <div class="iot-media-badge-tag">🗄️ FIREBASE HISTORICAL /LOGS</div>
-                    <div class="iot-img-wrapper" data-src="assets/iot/task-5/task5_serial_monitor_log.jpg" data-caption="Google Firebase Realtime Database console reflecting the chronological /logs tree with timestamped children.">
-                      <div class="iot-placeholder-frame">
-                        <span class="iot-placeholder-icon">🗃️</span>
-                        <div class="iot-placeholder-title">FIREBASE /LOGS JSON TREE</div>
-                        <div class="iot-placeholder-hint">Chronologically indexed time-series logs in Firebase console (<code>assets/iot/task-5/firebase_historical_logs_db.png</code>)</div>
-                      </div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-5/firebase_historical_logs_db.svg" data-caption="Google Firebase Realtime Database console reflecting the chronological /logs tree with timestamped children.">
+                      <img src="assets/iot/task-5/firebase_historical_logs_db.svg" alt="Firebase Historical /logs JSON Tree" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
                     </div>
                     <div class="iot-media-caption">
                       <strong>Figure 5.3:</strong> Firebase Realtime Database historical time-series branch storing timestamp-indexed sensor telemetry logs.
@@ -2399,12 +2451,9 @@ void logTelemetryRecord(float temp, float hum, int light, bool relay, const char
                 <div class="iot-media-item">
                   <div class="iot-media-frame">
                     <div class="iot-media-badge-tag">📊 HISTORICAL DATA TABLE</div>
-                    <div class="iot-img-wrapper" data-src="assets/iot/task-5/task5_circuit_breadboard.jpg" data-caption="Web dashboard historical data view with paginated records and CSV download trigger.">
-                      <div class="iot-placeholder-frame">
-                        <span class="iot-placeholder-icon">📈</span>
-                        <div class="iot-placeholder-title">HISTORICAL ANALYTICS VIEW</div>
-                        <div class="iot-placeholder-hint">Web tabular sensor archive with one-click RFC 4180 CSV export (<code>assets/iot/task-5/task5_dashboard_historical_view.png</code>)</div>
-                      </div>
+                    <div class="iot-img-wrapper" data-src="assets/iot/task-5/task5_dashboard_historical_view.svg" data-caption="Web dashboard historical data view with paginated records and CSV download trigger.">
+                      <img src="assets/iot/task-5/task5_dashboard_historical_view.svg" alt="Web Dashboard Historical Table &amp; CSV Export" class="iot-img" loading="lazy">
+                      <div class="iot-img-overlay"><span>🔍 View Full Resolution</span></div>
                     </div>
                     <div class="iot-media-caption">
                       <strong>Figure 5.4:</strong> Web dashboard historical tabular view displaying paginated sensor logs and the export engine trigger.
